@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="SFTP Connector:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0ad22ff6-c529-4788-b331-7d9af700e5d6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XstxR8ELA9E11iGzrxZmVcW5e7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Pictures/Log4j2-Sample-master" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\SAP\SFTP Connection\SFTP Connector\lib" />
+      <recent name="E:\SAP\SFTP Connection\SFTP Connector" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="SFTP Connector" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ad22ff6-c529-4788-b331-7d9af700e5d6" name="Default Changelist" comment="" />
+      <created>1581846875174</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581846875174</updated>
+      <workItem from="1581846876828" duration="9125000" />
+      <workItem from="1581912941838" duration="4751000" />
+      <workItem from="1581938678230" duration="1481000" />
+      <workItem from="1582000010299" duration="9178000" />
+      <workItem from="1582017195988" duration="5876000" />
+      <workItem from="1582027946772" duration="1896000" />
+      <workItem from="1582030737900" duration="550000" />
+      <workItem from="1582036750617" duration="32000" />
+      <workItem from="1582086100256" duration="418000" />
+      <workItem from="1582086588818" duration="123000" />
+      <workItem from="1582091662957" duration="31000" />
+      <workItem from="1582091750730" duration="835000" />
+      <workItem from="1582116401269" duration="2745000" />
+      <workItem from="1582173810396" duration="12129000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Auto_Import" timestamp="1581854453089">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Auto_Import/0.0.1366.728@0.0.1366.728" timestamp="1581854453089" />
+    <state x="434" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581847514367">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="434" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1581847514367" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582016390058">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1582016390058" />
+    <state x="410" y="105" key="FileChooserDialogImpl" timestamp="1582028588128">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="410" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582028588128" />
+    <state width="1286" height="155" key="GridCell.Tab.0.bottom" timestamp="1582188809563">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="155" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582188809563" />
+    <state width="1286" height="155" key="GridCell.Tab.0.center" timestamp="1582188809563">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="155" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582188809563" />
+    <state width="1286" height="155" key="GridCell.Tab.0.left" timestamp="1582188809563">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="155" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582188809563" />
+    <state width="1286" height="155" key="GridCell.Tab.0.right" timestamp="1582188809563">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="155" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582188809563" />
+    <state width="1286" height="194" key="GridCell.Tab.1.bottom" timestamp="1582186802775">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="194" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582186802775" />
+    <state width="1286" height="194" key="GridCell.Tab.1.center" timestamp="1582186802775">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="194" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1582186802775" />
+    <state width="1286" height="194" key="GridCell.Tab.1.left" timestamp="1582186802775">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="194" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1582186802775" />
+    <state width="1286" height="194" key="GridCell.Tab.1.right" timestamp="1582186802775">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="194" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1582186802775" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1582024100068">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582024100068" />
+    <state x="413" y="130" key="extract.method.dialog" timestamp="1582013745532">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="130" key="extract.method.dialog/0.0.1366.728@0.0.1366.728" timestamp="1582013745532" />
+    <state x="65" y="0" key="new project wizard" timestamp="1582025567788">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1582025567788" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1582186341314">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1582186341314" />
+  </component>
+</project>
