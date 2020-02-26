@@ -4,6 +4,7 @@ import com.jcraft.jsch.*;
 File Transfer using STFP via Java program
 Create By Humayun Kabir
 Developed On 20.02.2020
+Go live date of V1 23.02.2020
 */
 
 import java.io.File;
@@ -22,6 +23,7 @@ import java.util.stream.Stream;
 public class Main {
     static Logger logger = Logger.getLogger(Main.class.getName());
     static boolean isFileFound = false;
+
     public static void main(String[] args) {
         Session session = null;
         ChannelSftp channelSftp = null;
@@ -32,20 +34,20 @@ public class Main {
         //arg[3] -> application path
         //arg[4] -> ftp path
         //arg[5] -> copyFromApplication(CFA) or CopyFromFTP(CFF) [3 digit max]
-        //arg[6] -> Operation Command [FA - for all files, FP - matching file name using convention, FS- copy all the files]
+        //arg[6] -> Operation Command [FA - for all files, FP - matching file name using convention, FS- copy a single file]
         //arg[7] -> fileNameConvention [File convention or Full file name]
         try {
 
 //            args = new String[8];
-//            args[0] = "127.0.0.1";
-//            args[1] = "test_user";
-//            args[2] = "test";
+//            args[0] = "8.41.111.133";
+//            args[1] = "m0013778";
+//            args[2] = "8YviGEQn";
 //            args[3] = "E:\\test\\";
-//            args[4] = "inbound/";
+//            args[4] = "/outbound_archive/vgm/";
 //            args[5] = "CFF";
-//            args[6] = "FS";
-//            args[7] = "MSRP-MARS00013.txt";
-//
+//            args[6] = "FP";
+//            args[7] = "DespatchAdvice_20161221";
+
 
             //Initializing variables from arguments
             String host = args[0];
@@ -56,12 +58,12 @@ public class Main {
             String ops = args[5];
             String operationCommand = args[6];
             String fileNameConvention = "";
-            if (args.length < 7 || args.length > 8){
+            if (args.length < 7 || args.length > 8) {
                 logger.info("Parameters Length should be 7 or 8");
-            throw  new Exception();
+                throw new Exception();
             }
-            if (args.length == 8){
-               fileNameConvention = args[7];
+            if (args.length == 8) {
+                fileNameConvention = args[7];
             }
 
             session = createSession(host, user, pass);
@@ -71,15 +73,14 @@ public class Main {
                 List<String> result = walk.filter(Files::isRegularFile)
                         .map(x -> x.getFileName().toString()).collect(Collectors.toList());
                 for (int i = 0; i < result.size(); i++) {
-                        fileMovement(operationCommand, ops, fileNameConvention, channelSftp, appDir + result.get(i), ftpDir + result.get(i));
+                    fileMovement(operationCommand, ops, fileNameConvention, channelSftp, appDir + result.get(i), ftpDir + result.get(i));
                 }
             } else if (ops.equalsIgnoreCase("CFF")) {
                 Vector fileList = channelSftp.ls(ftpDir);
                 for (int i = 0; i < fileList.size(); i++) {
                     ChannelSftp.LsEntry lsEntry = (ChannelSftp.LsEntry) fileList.get(i);
                     if (!(lsEntry.getFilename().equalsIgnoreCase(".") || lsEntry.getFilename().equalsIgnoreCase(".."))) {
-                              fileMovement(operationCommand, ops, fileNameConvention, channelSftp, appDir + lsEntry.getFilename(), ftpDir + lsEntry.getFilename());
-
+                        fileMovement(operationCommand, ops, fileNameConvention, channelSftp, appDir + lsEntry.getFilename(), ftpDir + lsEntry.getFilename());
                     }
                 }
             } else {
@@ -107,7 +108,6 @@ public class Main {
         // Fetch all the files from application server to FTP and vice versa
         if (operationCommand.equalsIgnoreCase("FA")) {
             isFileFound = true;
-
             //Copy files from Application Server to FTP
             if (ops.equalsIgnoreCase("CFA")) {
                 CopyFileFromApplicationServer(channelSftp, applicationFilePath, ftpFileAbsolutePath);
@@ -117,30 +117,35 @@ public class Main {
                 getFilesFromFTP(channelSftp, applicationFilePath, ftpFileAbsolutePath);
             }
         }
+
         //Fetch all the files matching by the file name from application server to FTP and vice versa
         else if (operationCommand.equalsIgnoreCase("FP")) {
-
             //Copy files from Application Server to FTP
             if (ops.equalsIgnoreCase("CFA")) {
-                String[] processFile = applicationFilePath.split("\\\\");
-                if (fileNameConvention.equalsIgnoreCase(processFile[processFile.length - 1].substring(0, fileNameConvention.length()))) {
-                    isFileFound = true;
-                    CopyFileFromApplicationServer(channelSftp, applicationFilePath, ftpFileAbsolutePath);
+                String[] processFile = applicationFilePath.split("/");
+                if (fileNameConvention.length() <= processFile[processFile.length - 1].length()) {
+                    if (fileNameConvention.equalsIgnoreCase(processFile[processFile.length - 1].substring(0, fileNameConvention.length()))) {
+                        isFileFound = true;
+                        CopyFileFromApplicationServer(channelSftp, applicationFilePath, ftpFileAbsolutePath);
+                    }
                 }
             } else {
                 //Copy files from FTP to Application Server
                 String[] processFile = ftpFileAbsolutePath.split("/");
-                if (fileNameConvention.equalsIgnoreCase(processFile[processFile.length - 1].substring(0, fileNameConvention.length()))) {
-                    isFileFound = true;
-                    getFilesFromFTP(channelSftp, applicationFilePath, ftpFileAbsolutePath);
+                if (fileNameConvention.length() <= processFile[processFile.length - 1].length()) {
+                    if (fileNameConvention.equalsIgnoreCase(processFile[processFile.length - 1].substring(0, fileNameConvention.length()))) {
+                        isFileFound = true;
+                        getFilesFromFTP(channelSftp, applicationFilePath, ftpFileAbsolutePath);
+                    }
                 }
             }
         }
+
         //Fetch file matching full file name from Application to FTP and vice versa
         else if (operationCommand.equalsIgnoreCase("FS")) {
             if (ops.equalsIgnoreCase("CFA")) {
                 //Copy files from Application Server to FTP
-                String[] processFile = applicationFilePath.split("\\\\");
+                String[] processFile = applicationFilePath.split("/");
                 if (fileNameConvention.equalsIgnoreCase(processFile[processFile.length - 1])) {
                     isFileFound = true;
                     CopyFileFromApplicationServer(channelSftp, applicationFilePath, ftpFileAbsolutePath);
@@ -160,25 +165,35 @@ public class Main {
 
     //Getting Files from FTP to Application Server
     private static void getFilesFromFTP(ChannelSftp channelSftp, String appDir, String ftpDir) throws SftpException {
-        logger.info("Fetching Started for " + ftpDir);
-        channelSftp.get(ftpDir, appDir);
-        logger.info("Fetching complete for " + ftpDir);
-        channelSftp.rm(ftpDir);
-        logger.info("Delete performed for " + ftpDir);
+        try {
+            logger.info("Fetching Started for " + ftpDir);
+            channelSftp.get(ftpDir, appDir);
+            logger.info("Fetching complete for " + ftpDir);
+            channelSftp.rm(ftpDir);
+            logger.info("Delete performed for " + ftpDir);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
     //Copying files from Application server to FTP
     private static void CopyFileFromApplicationServer(ChannelSftp channelSftp, String appDir, String ftpDir) throws SftpException {
-        channelSftp.put(appDir, ftpDir);
-        File file = new File(appDir);
-        if (file.delete()) {
-            logger.info(appDir + " has been copied and deleted");
-        } else {
-            logger.info(appDir + " failed to copy and delete");
+        try {
+            channelSftp.put(appDir, ftpDir);
+            File file = new File(appDir);
+            if (file.delete()) {
+                logger.info(appDir + " has been copied and deleted");
+            } else {
+                logger.info(appDir + " failed to copy and delete");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
-//Creating Session
+
+    //Creating Session
     private static Session createSession(String host, String user, String pass) throws JSchException {
         Properties config = new Properties();
         config.put("StrictHostKeyChecking", "no");
@@ -200,6 +215,5 @@ public class Main {
         channelSftp.connect();
         return channelSftp;
     }
-
 }
 
